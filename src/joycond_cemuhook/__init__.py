@@ -719,6 +719,11 @@ def handle_devices(stop_event):
         evdev_devices = [d for d in evdev_devices if
                          any(d.name.startswith(valid_name) for valid_name in valid_device_names)]
 
+        if len(evdev_devices) == 0:
+            print(".", end="", flush=True)
+        for d in evdev_devices:
+            print("Found device: " + d.name)
+
         # Added for backwards compatibility with older versions of joycond
         combined_devices = [
             d for d in evdev_devices if d.name == "Nintendo Switch Combined Joy-Cons"]
