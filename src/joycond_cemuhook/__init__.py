@@ -888,13 +888,13 @@ def check_modules(module_names):
 def main():
     module_names = ["hid_nintendo", "hid_nx"]
 
-    if not check_modules(module_names):
-        message = os.linesep.join([
-            "Warning: A required kernel module is missing.",
-            f"  Supported modules: {module_names}",
-            "  To load a module, try: sudo modprobe <module_name>",
-            "  Enable verbose logging for details."])
-        print(message)
+    # if not check_modules(module_names):
+    #     message = os.linesep.join([
+    #         "Warning: A required kernel module is missing.",
+    #         f"  Supported modules: {module_names}",
+    #         "  To load a module, try: sudo modprobe <module_name>",
+    #         "  Enable verbose logging for details."])
+    #     print(message)
 
     stop_event = threading.Event()
 
